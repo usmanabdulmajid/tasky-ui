@@ -7,4 +7,5 @@ abstract class AppColor {
   static const shark = Color(0XFF262830);
   static const lima = Color(0XFF65BC27);
   static const mySin = Color(0XFFFCAD20);
+  static const torchRed = Color(0XFFFC2025);
 }
