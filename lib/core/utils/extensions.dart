@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
-import 'package:test_app/core/uitls/enums.dart';
+import 'package:test_app/core/utils/enums.dart';
 
 extension DateTimeHelper on DateTime {
   String get toDay => '$day';

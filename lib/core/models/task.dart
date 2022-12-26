@@ -1,6 +1,6 @@
 import 'dart:convert';
 
-import 'package:test_app/core/uitls/enums.dart';
+import 'package:test_app/core/utils/enums.dart';
 
 class Task {
   final String imageUrl;

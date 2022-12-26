@@ -1,8 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:test_app/core/core.dart';
+import 'package:test_app/core/utils/enums.dart';
 
 class PeopleTile extends StatelessWidget {
-  const PeopleTile({Key? key}) : super(key: key);
+  final String content;
+  final String day;
+  final String duration;
+  final TaskState state;
+  const PeopleTile({
+    Key? key,
+    required this.content,
+    required this.day,
+    required this.duration,
+    required this.state,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -12,10 +23,11 @@ class PeopleTile extends StatelessWidget {
       width: size.width,
       margin: const EdgeInsets.only(bottom: kspace),
       padding: const EdgeInsets.only(
-          top: ksmallSpace,
-          bottom: ksmallSpace,
-          right: ksmallSpace,
-          left: ksmallSpace),
+        top: ksmallSpace,
+        bottom: ksmallSpace,
+        right: ksmallSpace,
+        left: ksmallSpace,
+      ),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(3),
         gradient: LinearGradient(
@@ -57,13 +69,14 @@ class PeopleTile extends StatelessWidget {
                       ),
                     ),
                     RichText(
-                      text: const TextSpan(
+                      text: TextSpan(
                         text: 'DAY',
-                        style: TextStyle(fontSize: 10, color: AppColor.white),
+                        style: const TextStyle(
+                            fontSize: 10, color: AppColor.white),
                         children: [
                           TextSpan(
-                            text: ' 01',
-                            style: TextStyle(color: AppColor.breakerBay),
+                            text: ' $day',
+                            style: const TextStyle(color: AppColor.breakerBay),
                           )
                         ],
                       ),
@@ -72,7 +85,7 @@ class PeopleTile extends StatelessWidget {
                 ),
                 const YMargin(ksmallSpace),
                 Text(
-                  'Chemical Reaction/ Letter to god',
+                  content,
                   style: TextStyle(
                     fontSize: 9,
                     color: AppColor.white.withOpacity(0.7),
@@ -80,15 +93,20 @@ class PeopleTile extends StatelessWidget {
                 ),
                 const YMargin(ksmallSpace),
                 Row(
-                  children: const [
+                  children: [
                     Text(
-                      'DONE',
-                      style: TextStyle(color: AppColor.lima, fontSize: 10),
+                      state.name.toUpperCase(),
+                      style: TextStyle(
+                          color: state == TaskState.done
+                              ? AppColor.lima
+                              : AppColor.mySin,
+                          fontSize: 10),
                     ),
-                    XMargin(kxtraLargeSpace),
+                    const XMargin(kxtraLargeSpace),
                     Text(
-                      'Duration 24 hours',
-                      style: TextStyle(color: AppColor.lima, fontSize: 10),
+                      duration.toUpperCase(),
+                      style:
+                          const TextStyle(color: AppColor.lima, fontSize: 10),
                     ),
                   ],
                 )

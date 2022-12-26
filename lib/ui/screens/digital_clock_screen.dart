@@ -2,6 +2,8 @@ import 'package:avatar_stack/positions.dart';
 import 'package:flutter/material.dart';
 import 'package:test_app/core/core.dart';
 import 'package:avatar_stack/avatar_stack.dart';
+import 'package:test_app/core/models/task.dart';
+import 'package:test_app/ui/screens/challenge_detail_screen.dart';
 import 'package:test_app/ui/widgets/info_card.dart';
 import 'package:test_app/ui/widgets/left_done.dart';
 import 'package:test_app/ui/widgets/today_task_tile.dart';
@@ -168,9 +170,30 @@ class DigitalClockScreen extends StatelessWidget {
             ],
           ),
           const YMargin(kmediumSpace),
-          TodayTaskTile(),
-          TodayTaskTile(),
-          TodayTaskTile(),
+          Column(
+            children: List.generate(
+              taskList.length,
+              (index) => GestureDetector(
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const ChallengeDetailScreen(),
+                    ),
+                  );
+                },
+                child: TodayTaskTile(
+                  day: taskList[index].dateTime.toDay,
+                  month: taskList[index].dateTime.toMonth,
+                  year: taskList[index].dateTime.toYear,
+                  state: taskList[index].state,
+                  duration: taskList[index].duration,
+                  content: taskList[index].content,
+                  time: index == 0 ? '' : taskList[index].dateTime.toTime,
+                ),
+              ),
+            ),
+          ),
         ],
       ),
     );

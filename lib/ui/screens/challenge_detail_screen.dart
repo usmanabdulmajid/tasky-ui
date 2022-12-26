@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:test_app/core/core.dart';
+import 'package:test_app/core/models/activity.dart';
 import 'package:test_app/ui/widgets/left_done.dart';
 import 'package:test_app/ui/widgets/people_tile.dart';
 
@@ -18,7 +19,9 @@ class ChallengeDetailScreen extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               GestureDetector(
-                onTap: () {},
+                onTap: () {
+                  Navigator.pop(context);
+                },
                 child: const Icon(
                   Icons.chevron_left,
                   color: AppColor.breakerBay,
@@ -215,9 +218,17 @@ class ChallengeDetailScreen extends StatelessWidget {
             ],
           ),
           const YMargin(kmediumSpace),
-          PeopleTile(),
-          PeopleTile(),
-          PeopleTile(),
+          Column(
+            children: List.generate(
+              peopleList.length,
+              (index) => PeopleTile(
+                content: peopleList[index].content,
+                day: peopleList[index].date,
+                duration: peopleList[index].duration,
+                state: peopleList[index].state,
+              ),
+            ),
+          ),
         ],
       ),
     );

@@ -1,8 +1,27 @@
 import 'package:flutter/material.dart';
 import 'package:test_app/core/core.dart';
+import 'package:test_app/core/utils/enums.dart';
 
 class TodayTaskTile extends StatelessWidget {
-  const TodayTaskTile({Key? key}) : super(key: key);
+  final String day;
+  final String month;
+  final String year;
+  final String time;
+  final String pm;
+  final String content;
+  final TaskState state;
+  final String duration;
+  const TodayTaskTile({
+    Key? key,
+    required this.day,
+    required this.month,
+    required this.year,
+    required this.state,
+    required this.duration,
+    required this.content,
+    this.time = '',
+    this.pm = '',
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -65,17 +84,27 @@ class TodayTaskTile extends StatelessWidget {
                       ),
                     ),
                     RichText(
-                      text: const TextSpan(
-                        text: '03',
-                        style:
-                            TextStyle(fontSize: 10, color: AppColor.breakerBay),
+                      text: TextSpan(
+                        text: day,
+                        style: const TextStyle(
+                            fontSize: 10, color: AppColor.breakerBay),
                         children: [
                           TextSpan(
-                            text: ' May',
-                            style: TextStyle(color: AppColor.white),
+                            text: ' $month',
+                            style: const TextStyle(color: AppColor.white),
                             children: [
                               TextSpan(
-                                text: ' 2021',
+                                text: ' $year',
+                              ),
+                              if (time.isNotEmpty)
+                                const TextSpan(
+                                  text: ' |',
+                                ),
+                              TextSpan(
+                                text: ' $time',
+                                style: const TextStyle(
+                                  color: AppColor.breakerBay,
+                                ),
                               ),
                             ],
                           )
@@ -86,7 +115,7 @@ class TodayTaskTile extends StatelessWidget {
                 ),
                 const YMargin(ksmallSpace),
                 Text(
-                  'People often overlook the power of simple walking. It increases cardiovascular and pulmonary',
+                  content,
                   style: TextStyle(
                     fontSize: 9,
                     color: AppColor.white.withOpacity(0.7),
@@ -94,15 +123,25 @@ class TodayTaskTile extends StatelessWidget {
                 ),
                 const YMargin(ksmallSpace),
                 Row(
-                  children: const [
+                  children: [
                     Text(
-                      'DONE',
-                      style: TextStyle(color: AppColor.lima, fontSize: 10),
+                      state.name.toUpperCase(),
+                      style: TextStyle(
+                        color: state == TaskState.done
+                            ? AppColor.lima
+                            : AppColor.mySin,
+                        fontSize: 10,
+                      ),
                     ),
-                    XMargin(kxtraLargeSpace),
+                    const XMargin(kxtraLargeSpace),
                     Text(
-                      '01:16 mins you Save',
-                      style: TextStyle(color: AppColor.lima, fontSize: 10),
+                      duration.toUpperCase(),
+                      style: TextStyle(
+                        color: state == TaskState.done
+                            ? AppColor.lima
+                            : AppColor.mySin,
+                        fontSize: 10,
+                      ),
                     ),
                   ],
                 )
