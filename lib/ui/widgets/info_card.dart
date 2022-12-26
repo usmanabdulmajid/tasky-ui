@@ -81,6 +81,10 @@ class InfoCard extends StatelessWidget {
                           decoration: BoxDecoration(
                             color: AppColor.shark,
                             borderRadius: BorderRadius.circular(12),
+                            border: Border.all(
+                              color: AppColor.white.withOpacity(0.3),
+                              width: 0.5,
+                            ),
                           ),
                           child: const Text(
                             'Design & Art',
@@ -97,6 +101,10 @@ class InfoCard extends StatelessWidget {
                           decoration: BoxDecoration(
                             color: AppColor.shark,
                             borderRadius: BorderRadius.circular(12),
+                            border: Border.all(
+                              color: AppColor.white.withOpacity(0.3),
+                              width: 0.5,
+                            ),
                           ),
                           child: const Text(
                             'Globle',
