@@ -17,4 +17,6 @@ class TaskyIcons {
   static final taskCalendar = getsvg('task_calendar.svg');
   static final time = getsvg('time.svg');
   static final topWeather = getsvg('top_weather.svg');
+  static final edit = getsvg('edit.svg');
+  static final shareCircle = getsvg('share_circle.svg');
 }

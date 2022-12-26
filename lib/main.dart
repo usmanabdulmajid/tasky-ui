@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:test_app/core/theme/tasky_theme.dart';
+import 'package:test_app/ui/screens/challenge_detail_screen.dart';
 import 'package:test_app/ui/screens/digital_clock_screen.dart';
 
 void main() {
@@ -15,7 +16,7 @@ class TaskyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Tasky',
       theme: TaskyTheme.theme,
-      home: const DigitalClockScreen(),
+      home: const ChallengeDetailScreen(),
     );
   }
 }
