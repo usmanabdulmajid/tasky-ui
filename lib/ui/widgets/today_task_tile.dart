@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:test_app/core/core.dart';
 
-class TaskTile extends StatelessWidget {
-  const TaskTile({Key? key}) : super(key: key);
+class TodayTaskTile extends StatelessWidget {
+  const TodayTaskTile({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -51,6 +51,7 @@ class TaskTile extends StatelessWidget {
           const XMargin(ksmallSpace),
           Expanded(
             child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Row(

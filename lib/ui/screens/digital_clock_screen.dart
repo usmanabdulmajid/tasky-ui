@@ -4,7 +4,7 @@ import 'package:test_app/core/core.dart';
 import 'package:avatar_stack/avatar_stack.dart';
 import 'package:test_app/ui/widgets/info_card.dart';
 import 'package:test_app/ui/widgets/left_done.dart';
-import 'package:test_app/ui/widgets/task_tile.dart';
+import 'package:test_app/ui/widgets/today_task_tile.dart';
 
 class DigitalClockScreen extends StatelessWidget {
   const DigitalClockScreen({Key? key}) : super(key: key);
@@ -168,9 +168,9 @@ class DigitalClockScreen extends StatelessWidget {
             ],
           ),
           const YMargin(kmediumSpace),
-          TaskTile(),
-          TaskTile(),
-          TaskTile(),
+          TodayTaskTile(),
+          TodayTaskTile(),
+          TodayTaskTile(),
         ],
       ),
     );
