@@ -12,7 +12,11 @@ class TaskTile extends StatelessWidget {
       width: size.width,
       margin: const EdgeInsets.only(bottom: kspace),
       padding: const EdgeInsets.only(
-          top: ksmallSpace, bottom: ksmallSpace, right: ksmallSpace),
+        top: ksmallSpace,
+        bottom: ksmallSpace,
+        right: ksmallSpace,
+        left: ktinyspace,
+      ),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(3),
         gradient: LinearGradient(
@@ -26,6 +30,13 @@ class TaskTile extends StatelessWidget {
       ),
       child: Row(
         children: [
+          const RotatedBox(
+            quarterTurns: -1,
+            child: Text(
+              'TODAY’S TASK',
+              style: TextStyle(fontSize: 10, color: AppColor.white),
+            ),
+          ),
           Container(
             height: 67,
             width: 67,
