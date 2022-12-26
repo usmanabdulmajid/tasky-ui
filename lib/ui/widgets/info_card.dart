@@ -2,6 +2,7 @@ import 'package:avatar_stack/avatar_stack.dart';
 import 'package:avatar_stack/positions.dart';
 import 'package:flutter/material.dart';
 import 'package:test_app/core/core.dart';
+import 'package:test_app/ui/widgets/progress_bar.dart';
 
 class InfoCard extends StatelessWidget {
   const InfoCard({Key? key}) : super(key: key);
@@ -10,10 +11,10 @@ class InfoCard extends StatelessWidget {
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
     return Container(
-      constraints: BoxConstraints(maxWidth: size.width * 0.6),
+      constraints: BoxConstraints(maxWidth: size.width * 0.60),
+      margin: const EdgeInsets.only(left: ksmallSpace),
       padding: const EdgeInsets.all(kspace),
       decoration: BoxDecoration(
-        //color: AppColor.white.withOpacity(0.2),
         borderRadius: BorderRadius.circular(3),
         gradient: LinearGradient(
           colors: [
@@ -22,7 +23,6 @@ class InfoCard extends StatelessWidget {
           ],
           begin: Alignment.topLeft,
           end: Alignment.bottomRight,
-          //stops: const [0.0, 0.3, 0.6, 1.0],
         ),
       ),
       child: Column(
@@ -127,6 +127,12 @@ class InfoCard extends StatelessWidget {
             style: TextStyle(
               color: AppColor.white,
             ),
+          ),
+          const YMargin(kspace),
+          const ProgressBar(
+            daysLeft: '26',
+            //substract maxWidth of container to get actual progress
+            percentage: (0.60 - 0.46),
           ),
           const YMargin(kspace),
           Row(

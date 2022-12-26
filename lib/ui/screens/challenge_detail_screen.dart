@@ -3,6 +3,7 @@ import 'package:test_app/core/core.dart';
 import 'package:test_app/core/models/activity.dart';
 import 'package:test_app/ui/widgets/left_done.dart';
 import 'package:test_app/ui/widgets/people_tile.dart';
+import 'package:test_app/ui/widgets/progress_bar.dart';
 
 class ChallengeDetailScreen extends StatelessWidget {
   const ChallengeDetailScreen({Key? key}) : super(key: key);
@@ -158,6 +159,11 @@ class ChallengeDetailScreen extends StatelessWidget {
               fontSize: 12,
               color: AppColor.white.withOpacity(0.7),
             ),
+          ),
+          const YMargin(kspace),
+          const ProgressBar(
+            daysLeft: '26',
+            percentage: 0.46,
           ),
           const YMargin(kspace),
           Row(
