@@ -17,6 +17,7 @@ class TaskyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Tasky',
       theme: TaskyTheme.theme,
+      debugShowCheckedModeBanner: false,
       home: const NavBar(),
     );
   }
