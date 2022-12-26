@@ -19,6 +19,11 @@ class TaskyTheme {
     scaffoldBackgroundColor: AppColor.mirage,
     backgroundColor: AppColor.mirage,
     bottomAppBarColor: AppColor.mirage,
+    bottomNavigationBarTheme: const BottomNavigationBarThemeData(
+      backgroundColor: AppColor.mirage,
+      selectedItemColor: AppColor.white,
+      unselectedItemColor: AppColor.white,
+    ),
     primaryColor: AppColor.mirage,
     fontFamily: 'UbuntuCondensed',
   );
