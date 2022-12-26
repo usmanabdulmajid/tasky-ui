@@ -2,6 +2,16 @@
 
 A new Flutter project.
 
+## Screenshots
+
+![Home](https://user-images.githubusercontent.com/63570223/209550944-47a49944-c3fe-4c36-bc28-7809a5c27668.png)
+![detail_challenge](https://user-images.githubusercontent.com/63570223/209550962-e862750e-414b-46ec-acad-92ac4679ef1f.png)
+
+![Task](https://user-images.githubusercontent.com/63570223/209550982-04631675-f58e-49af-a698-03ad4b4ea21b.png)
+![Pomodoro](https://user-images.githubusercontent.com/63570223/209550996-c5ed03b7-8774-4022-82da-0b1e3740c941.png)
+![challenge](https://user-images.githubusercontent.com/63570223/209551006-d52ac982-ab1c-42d5-b2c6-e5c0aeab1ea8.png)
+
+
 ## Getting Started
 
 This project is a starting point for a Flutter application.
